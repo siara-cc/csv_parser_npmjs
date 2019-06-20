@@ -60,7 +60,7 @@ The given demos convert between CSV, TDV. XML and JSON (CSV to XML DOM, CSV to J
 
 # Screenshots
 
-<div style="height:800px; overflow-y:scroll">
+<div height="800px">
 <h3>Example 1.1: Conventional CSV</h3>
 
 <img src='https://siara.cc/csv_ml/screenshots/csv.to.xml.1.1.Conventional.Table.data.png' title='CSV to XML - 1.1 Conventional Table data'/><br/><br/>
