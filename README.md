@@ -58,6 +58,270 @@ For running Javascript and Java Applet demos, you may have to change security se
 
 The given demos convert between CSV, TDV. XML and JSON (CSV to XML DOM, CSV to JSON, TDV to XML DOM, TDV to JSON, XML to CSV). It is basically a CSV TDV TSV to JSON XML Convertor. It also demonstrates how database binding can be achieved using SQLite db.
 
+# Screenshots
+
+{::nomarkdown}
+
+<h3>Example 1.1: Conventional CSV</h3>
+
+<img src='https://siara.cc/csv_ml/screenshots/csv.to.xml.1.1.Conventional.Table.data.png' title='CSV to XML - 1.1 Conventional Table data'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/csv.to.json.1.1.Conventional.Table.data.png' title='CSV to JSON - 1.1 Conventional Table data'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/csv.xpath.1.1.Conventional.Table.data.png' title='XPath on CSV - 1.1 Conventional Table data'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/tdv.to.xml.1.1.Conventional.Table.data.png' title='TSV to XML - 1.1 Conventional Table data'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/tdv.to.json.1.1.Conventional.Table.data.png' title='TSV to JSON - 1.1 Conventional Table data'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/pipe.delimiter.to.json.1.1.Conventional.Table.data.png' title='Pipe delimiter to JSON - 1.1 Conventional Table data'/><br/><br/>
+
+<h3>Example 1.2: Conventional CSV without Header</h3>
+<img src='https://siara.cc/csv_ml/screenshots/csv.to.xml.1.2.Table.data.without.Header.png' title='CSV to XML - 1.2 Table data without Header'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/csv.to.json.1.2.Table.data.without.Header.png' title='CSV to JSON - 1.2 Table data without Header'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/csv.xpath.1.2.Table.data.without.Header.png' title='XPath on CSV - 1.2 Table data without Header'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/tdv.to.xml.1.2.Table.data.without.Header.png' title='TSV to XML - 1.2 Table data without Header'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/tdv.to.json.1.2.Table.data.without.Header.png' title='TSV to JSON - 1.2 Table data without Header'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/pipe.delimiter.to.json.1.2.Table.data.without.Header.png' title='Pipe delimiter to JSON - 1.2 Table data without Header'/><br/><br/>
+
+<h3>Example 1.3 and 1.4: Conventional CSV with Header and Node name</h3>
+<img src='https://siara.cc/csv_ml/screenshots/csv.to.xml.1.3.Table.data.with.Header.and.Node.name.png' title='CSV to XML - 1.3 Table data with Header and Node name'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/csv.to.json.1.3.Table.data.with.Header.and.Node.name.png' title='CSV to JSON - 1.3 Table data with Header and Node name'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/csv.xpath.1.3.Table.data.with.Header.and.Node.name.png' title='XPath on CSV - 1.3 Table data with Header and Node name'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/tdv.to.xml.1.3.Table.data.with.Header.and.Node.name.png' title='TSV to XML - 1.3 Table data with Header and Node name'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/tdv.to.json.1.3.Table.data.with.Header.and.Node.name.png' title='TSV to JSON - 1.3 Table data with Header and Node name'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/pipe.delimiter.to.json.1.3.Table.data.with.Header.and.Node.name.png' title='Pipe delimiter to JSON - 1.3 Table data with Header and Node name'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/csv.to.xml.1.4.Table.data.with.Header.and.Node.index.png' title='CSV to XML - 1.4 Table data with Header and Node index'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/csv.to.json.1.4.Table.data.with.Header.and.Node.index.png' title='CSV to JSON - 1.4 Table data with Header and Node index'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/csv.xpath.1.4.Table.data.with.Header.and.Node.index.png' title='XPath on CSV - 1.4 Table data with Header and Node index'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/tdv.to.xml.1.4.Table.data.with.Header.and.Node.index.png' title='TSV to XML - 1.4 Table data with Header and Node index'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/tdv.to.json.1.4.Table.data.with.Header.and.Node.index.png' title='TSV to JSON - 1.4 Table data with Header and Node index'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/pipe.delimiter.to.json.1.4.Table.data.with.Header.and.Node.index.png' title='Pipe delimiter to JSON - 1.4 Table data with Header and Node index'/><br/><br/>
+
+<h3>Example 1.5: Multiple nodes under root</h3>
+<img src='https://siara.cc/csv_ml/screenshots/csv.to.xml.1.5.Multiple.nodes.under.root.png' title='CSV to XML - 1.5 Multiple nodes under root'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/csv.to.json.1.5.Multiple.nodes.under.root.png' title='CSV to JSON - 1.5 Multiple nodes under root'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/csv.xpath.1.5.Multiple.nodes.under.root.png' title='XPath on CSV - 1.5 Multiple nodes under root'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/tdv.to.xml.1.5.Multiple.nodes.under.root.png' title='TSV to XML - 1.5 Multiple nodes under root'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/tdv.to.json.1.5.Multiple.nodes.under.root.png' title='TSV to JSON - 1.5 Multiple nodes under root'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/pipe.delimiter.to.json.1.5.Multiple.nodes.under.root.png' title='Pipe delimiter to JSON - 1.5 Multiple nodes under root'/><br/><br/>
+
+<h3>Example 2.1: Multiple level CSV data</h3>
+<img src='https://siara.cc/csv_ml/screenshots/csv.to.xml.2.1.Multiple.level.data.png' title='CSV to JSON - 2.1 Multiple level data'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/csv.to.json.2.1.Multiple.level.data.png' title='CSV to JSON - 2.1 Multiple level data'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/csv.xpath.2.1.Multiple.level.data.png' title='XPath on CSV - 2.1 Multiple level data'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/tdv.to.xml.2.1.Multiple.level.data.png' title='TSV to XML - 2.1 Multiple level data'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/tdv.to.json.2.1.Multiple.level.data.png' title='TSV to JSON - 2.1 Multiple level data'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/pipe.delimiter.to.json.2.1.Multiple.level.data.png' title='Pipe delimiter to JSON - 2.1 Multiple level data'/><br/><br/>
+
+<h3>Example 2.2: Multiple level CSV data with siblings</h3>
+<img src='https://siara.cc/csv_ml/screenshots/csv.to.xml.2.2.Multiple.level.data.with.siblings.png' title='CSV to XML - 2.2 Multiple level data with siblings'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/csv.to.json.2.2.Multiple.level.data.with.siblings.png' title='CSV to JSON - 2.2 Multiple level data with siblings'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/csv.xpath.2.2.Multiple.level.data.with.siblings.png' title='XPath on CSV - 2.2 Multiple level data with siblings'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/tdv.to.xml.2.2.Multiple.level.data.with.siblings.png' title='TSV to XML - 2.2 Multiple level data with siblings'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/tdv.to.json.2.2.Multiple.level.data.with.siblings.png' title='TSV to JSON - 2.2 Multiple level data with siblings'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/pipe.delimiter.to.json.2.2.Multiple.level.data.with.siblings.png' title='Pipe delimiter to JSON - 2.2 Multiple level data with siblings'/><br/><br/>
+
+<h3>Example 3.1: Node attributes and content</h3>
+<img src='https://siara.cc/csv_ml/screenshots/csv.to.xml.3.1.Node.attributes.png' title='CSV to XML - 3.1 Node attributes'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/csv.to.json.3.1.Node.attributes.png' title='CSV to JSON - 3.1 Node attributes'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/csv.xpath.3.1.Node.attributes.png' title='XPath on CSV - 3.1 Node attributes'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/tdv.to.xml.3.1.Node.attributes.png' title='TSV to XML - 3.1 Node attributes'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/tdv.to.json.3.1.Node.attributes.png' title='TSV to JSON - 3.1 Node attributes'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/pipe.delimiter.to.json.3.1.Node.attributes.png' title='Pipe delimiter to JSON - 3.1 Node attributes'/><br/><br/>
+
+<h3>Example 3.2: Node content</h3>
+<img src='https://siara.cc/csv_ml/screenshots/csv.to.xml.3.2.Node.content.png' title='CSV to XML - 3.2 Node content'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/csv.to.json.3.2.Node.content.png' title='CSV to JSON - 3.2 Node content'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/csv.xpath.3.2.Node.content.png' title='XPath on CSV - 3.2 Node content'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/tdv.to.xml.3.2.Node.content.png' title='TSV to XML - 3.2 Node content'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/tdv.to.json.3.2.Node.content.png' title='TSV to JSON - 3.2 Node content'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/pipe.delimiter.to.json.3.2.Node.content.png' title='Pipe delimiter to JSON - 3.2 Node content'/><br/><br/>
+
+<h3>Example 3.3: Quote handling</h3>
+<img src='https://siara.cc/csv_ml/screenshots/csv.to.xml.3.3.Quote.handling.png' title='CSV to XML - 3.3 Quote handling'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/csv.to.json.3.3.Quote.handling.png' title='CSV to JSON - 3.3 Quote handling'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/csv.xpath.3.3.Quote.handling.png' title='XPath on CSV - 3.3 Quote handling'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/tdv.to.xml.3.3.Quote.handling.png' title='TSV to XML - 3.3 Quote handling'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/tdv.to.json.3.3.Quote.handling.png' title='TSV to JSON - 3.3 Quote handling'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/pipe.delimiter.to.json.3.3.Quote.handling.png' title='Pipe delimiter to JSON - 3.3 Quote handling'/><br/><br/>
+
+<h3>Example 3.4: Inline comments and empty lines</h3>
+<img src='https://siara.cc/csv_ml/screenshots/csv.to.xml.3.4.Inline.comments.and.empty.lines.png' title='CSV to XML - 3.4 Inline comments and empty lines'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/csv.to.json.3.4.Inline.comments.and.empty.lines.png' title='CSV to JSON - 3.4 Inline comments and empty lines'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/csv.xpath.3.4.Inline.comments.and.empty.lines.png' title='XPath on CSV - 3.4 Inline comments and empty lines'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/tdv.to.xml.3.4.Inline.comments.and.empty.lines.png' title='TSV to XML - 3.4 Inline comments and empty lines'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/tdv.to.json.3.4.Inline.comments.and.empty.lines.png' title='TSV to JSON - 3.4 Inline comments and empty lines'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/pipe.delimiter.to.json.3.4.Inline.comments.and.empty.lines.png' title='Pipe delimiter to JSON - 3.4 Inline comments and empty lines'/><br/><br/>
+
+<h3>Example 3.5: Changing root node</h3>
+<img src='https://siara.cc/csv_ml/screenshots/csv.to.xml.3.5.1.Changing.root.node.png' title='CSV to XML - 3.5.1 Changing root node'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/csv.to.json.3.5.1.Changing.root.node.png' title='CSV to JSON - 3.5.1 Changing root node'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/csv.xpath.3.5.1.Changing.root.node.png' title='XPath on CSV - 3.5.1 Changing root node'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/tdv.to.xml.3.5.1.Changing.root.node.png' title='TSV to XML - 3.5.1 Changing root node'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/tdv.to.json.3.5.1.Changing.root.node.png' title='TSV to JSON - 3.5.1 Changing root node'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/pipe.delimiter.to.json.3.5.1.Changing.root.node.png' title='Pipe delimiter to JSON - 3.5.1 Changing root node'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/csv.to.xml.3.5.2.Changing.root.node-data.node.as.root.png' title='CSV to XML - 3.5.2 Changing root node - data node as root'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/csv.to.json.3.5.2.Changing.root.node-data.node.as.root.png' title='CSV to JSON - 3.5.2 Changing root node - data node as root'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/csv.xpath.3.5.2.Changing.root.node-data.node.as.root.png' title='XPath on CSV - 3.5.2 Changing root node - data node as root'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/tdv.to.xml.3.5.2.Changing.root.node-data.node.as.root.png' title='TSV to XML - 3.5.2 Changing root node - data node as root'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/tdv.to.json.3.5.2.Changing.root.node-data.node.as.root.png' title='TSV to JSON - 3.5.2 Changing root node - data node as root'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/pipe.delimiter.to.json.3.5.2.Changing.root.node-data.node.as.root.png' title='Pipe delimiter to JSON - 3.5.2 Changing root node - data node as root'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/csv.to.xml.3.5.3.Changing.root.node-error.case.1.png' title='CSV to XML - 3.5.3 Changing root node - error case 1'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/csv.to.json.3.5.3.Changing.root.node-error.case.1.png' title='CSV to JSON - 3.5.3 Changing root node - error case 1'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/tdv.to.xml.3.5.3.Changing.root.node-error.case.1.png' title='TSV to XML - 3.5.3 Changing root node - error case 1'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/tdv.to.json.3.5.3.Changing.root.node-error.case.1.png' title='TSV to JSON - 3.5.3 Changing root node - error case 1'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/pipe.delimiter.to.json.3.5.3.Changing.root.node-error.case.1.png' title='Pipe delimiter to JSON - 3.5.3 Changing root node - error case 1'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/csv.to.xml.3.5.4.Changing.root.node-error.case.2.png' title='CSV to XML - 3.5.4 Changing root node - error case 2'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/csv.to.json.3.5.4.Changing.root.node-error.case.2.png' title='CSV to JSON - 3.5.4 Changing root node - error case 2'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/tdv.to.xml.3.5.4.Changing.root.node-error.case.2.png' title='TSV to XML - 3.5.4 Changing root node - error case 2'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/tdv.to.json.3.5.4.Changing.root.node-error.case.2.png' title='TSV to JSON - 3.5.4 Changing root node - error case 2'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/pipe.delimiter.to.json.3.5.4.Changing.root.node-error.case.2.png' title='Pipe delimiter to JSON - 3.5.4 Changing root node - error case 2'/><br/><br/>
+
+<h3>Example 3.6: Namespaces</h3>
+<img src='https://siara.cc/csv_ml/screenshots/csv.to.xml.3.6.1.Namespaces.1.png' title='CSV to XML - 3.6.1 Namespaces (1)'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/csv.to.json.3.6.1.Namespaces.1.png' title='CSV to JSON - 3.6.1 Namespaces (1)'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/tdv.to.xml.3.6.1.Namespaces.1.png' title='TSV to XML - 3.6.1 Namespaces (1)'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/tdv.to.json.3.6.1.Namespaces.1.png' title='TSV to JSON - 3.6.1 Namespaces (1)'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/pipe.delimiter.to.json.3.6.1.Namespaces.1.png' title='Pipe delimiter to JSON - 3.6.1 Namespaces (1)'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/csv.to.xml.3.6.2.Namespaces.2.png' title='CSV to XML - 3.6.2 Namespaces (2)'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/csv.to.json.3.6.2.Namespaces.2.png' title='CSV to JSON - 3.6.2 Namespaces (2)'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/tdv.to.xml.3.6.2.Namespaces.2.png' title='TSV to XML - 3.6.2 Namespaces (2)'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/tdv.to.json.3.6.2.Namespaces.2.png' title='TSV to JSON - 3.6.2 Namespaces (2)'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/pipe.delimiter.to.json.3.6.2.Namespaces.2.png' title='Pipe delimiter to JSON - 3.6.2 Namespaces (2)'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/csv.to.xml.3.6.3.Namespaces.3.png' title='CSV to XML - 3.6.3 Namespaces (3)'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/csv.to.json.3.6.3.Namespaces.3.png' title='CSV to JSON - 3.6.3 Namespaces (3)'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/tdv.to.xml.3.6.3.Namespaces.3.png' title='TSV to XML - 3.6.3 Namespaces (3)'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/tdv.to.json.3.6.3.Namespaces.3.png' title='TSV to JSON - 3.6.3 Namespaces (3)'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/pipe.delimiter.to.json.3.6.3.Namespaces.3.png' title='Pipe delimiter to JSON - 3.6.3 Namespaces (3)'/><br/><br/>
+
+<h3>Example 3.7: Re-using node definitions</h3>
+<img src='https://siara.cc/csv_ml/screenshots/csv.to.xml.3.7.Re-using.node.definitions.png' title='CSV to XML - 3.6.3 Namespaces (3)'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/csv.to.json.3.7.Re-using.node.definitions.png' title='CSV to JSON - 3.6.3 Namespaces (3)'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/tdv.to.xml.3.7.Re-using.node.definitions.png' title='TSV to XML - 3.6.3 Namespaces (3)'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/tdv.to.json.3.7.Re-using.node.definitions.png' title='TSV to JSON - 3.6.3 Namespaces (3)'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/pipe.delimiter.to.json.3.7.Re-using.node.definitions.png' title='Pipe delimiter to JSON - 3.7  Re-using node definitions'/><br/><br/>
+
+<h3>Example 4.1: Specifying Type and Length</h3>
+<img src='https://siara.cc/csv_ml/screenshots/ddl.dml.4.1.Schema.Specifying.type.and.length.png' title='DDL, DML - 4.1 Schema Specifying type and length'/><br/><br/>
+
+<h3>Example 4.2: Default value</h3>
+<img src='https://siara.cc/csv_ml/screenshots/ddl.dml.4.2.Schema.Default.value.png' title='DDL, DML - 4.2 Schema Default value'/><br/><br/>
+
+<h3>Example 4.3: Null values</h3>
+<img src='https://siara.cc/csv_ml/screenshots/ddl.dml.4.3.1.Schema.Null.values.(1).png' title='DDL, DML - 4.3.1 Schema Null values (1)'/><br/><br/>
+
+<img src='https://siara.cc/csv_ml/screenshots/ddl.dml.4.3.2.Schema.Null.values.(2).png' title='DDL, DML - 4.3.2 Schema Null values (2)'/><br/><br/>
+
+<h3>Example 4.4: Precision and Scale</h3>
+<img src='https://siara.cc/csv_ml/screenshots/ddl.dml.4.4.Schema.Precision.and.Scale.png' title='DDL, DML - 4.4 Schema Precision and Scale'/><br/><br/>
+
+<h3>Example 4.5: Date and Time</h3>
+<img src='https://siara.cc/csv_ml/screenshots/ddl.dml.4.5.Schema.Date.and.Time.png' title='DDL, DML - 4.5 Schema Date and Time'/><br/><br/>
+
+<h3>Example 4.6: Special column id</h3>
+<img src='https://siara.cc/csv_ml/screenshots/ddl.dml.4.6.Schema.Special.column.id.png' title='DDL, DML - 4.6 Schema Special column id'/><br/><br/>
+
+<h3>Example 4.7: Special column parent_id</h3>
+<img src='https://siara.cc/csv_ml/screenshots/ddl.dml.4.7.Schema.Special.column.parent_id.png' title='DDL, DML - 4.7 Schema Special column parent_id'/><br/><br/>
+
+<h3>Retrieving data for Example 2.1</h3>
+<img src='https://siara.cc/csv_ml/screenshots/sql.2.1.Multiple.level.data.png' title='Data Retrieval - 2.1 Multiple level data'/><br/><br/>
+<h3>Retrieving data for Example 1.5</h3>
+<img src='https://siara.cc/csv_ml/screenshots/sql.1.5.Multiple.nodes.under.root.png' title='Data Retrieval - 1.5 Multiple nodes under root'/><br/><br/>
+
+{:/}
+
 # Contact
 
 Create issue here or contact arun@siara.cc for any queries or feedback.
