@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CSV_ML Javascript implementation</title>
+<script language="javascript" src="csv_parser.js"/>
+<script language="javascript">
+<!--
+function generateDDLDML() {
+   var out_obj = document.getElementById("out");
+   out_obj.value = "";
+   var csv_ml_parser = new CSV_ML_Parser(document.getElementById("csv_ml_src").value);
+   var dom = csv_ml_parser.parse("dom", false);
+   if (csv_ml_parser.ex.display_exceptions()) return;
+   var node_objects = csv_ml_parser.get_schema();
+   out_obj.value = CSV_ML_Script.generateDDL(node_objects);
+   if (out_obj.value != "") {
+      out_obj.value += "\r\n";
+      out_obj.value += CSV_ML_Script.generate_dml_recursively(node_objects, dom.documentElement, "");
+   } else {
+      out_obj.value = "No schema";
+   }
+   document.getElementById('out_size').innerHTML = document.getElementById("out").value.length;
+}
+
+function convertToXML() {
+   var csv_ml_parser = new CSV_ML_Parser(document.getElementById("csv_ml_src").value);
+   var dom = csv_ml_parser.parse("dom", false);
+   if (csv_ml_parser.ex.display_exceptions()) return;
+   var serializer = new XMLSerializer();
+   document.getElementById("out").value = XMLUtil.prettyPrint(serializer.serializeToString(dom));
+   document.getElementById("out_size").innerHTML = document.getElementById("out").value.length;
+}
+
+function evalXPath() {
+   var csv_ml_parser = new CSV_ML_Parser(document.getElementById("csv_ml_src").value);
+   var dom = csv_ml_parser.parse("dom", false);
+   if (csv_ml_parser.ex.display_exceptions()) return;
+   var serializer = new XMLSerializer();
+   var ret_arr = XMLUtil.evaluateXPath(dom, document.getElementById("xpath").value);
+   document.getElementById("out").value = "";
+   for (var i=0; i<ret_arr.length; i++) {
+       if (typeof(ret_arr[i]) == "object")
+          document.getElementById("out").value += XMLUtil.prettyPrint(serializer.serializeToString(ret_arr[i]));
+       else
+          document.getElementById("out").value += ret_arr[i];
+   }
+   document.getElementById('out_size').innerHTML = document.getElementById("out").value.length;
+}
+
+function convertToJSO() {
+   var csv_ml_parser = new CSV_ML_Parser(document.getElementById("csv_ml_src").value);
+   var ret = csv_ml_parser.parse("jso", false);
+   if (csv_ml_parser.ex.display_exceptions()) return;
+   document.getElementById("out").value = JSON.stringify(ret, null, ' ');
+   document.getElementById('out_size').innerHTML = document.getElementById("out").value.length;
+}
+function backToCSV() {
+   var dom = XMLUtil.parseXMLToDOM(document.getElementById("out").value);
+   document.getElementById("csv_ml_src").value = CSV_ML_Output.generate(dom);
+   document.getElementById('in_size').innerHTML = document.getElementById("csv_ml_src").value.length;
+}
+function body_onload() {
+   ex_change('1.1');
+   document.getElementById("ddldml").focus();
+}
+function ex_change(idx) {
+   var t_id = "ex"+idx+"_textarea";
+   document.getElementById("csv_ml_src").value = document.getElementById(t_id).value;
+   document.getElementById("xpath").value = document.getElementById("ex"+idx+"_xpath").value;
+   document.getElementById('in_size').innerHTML = document.getElementById(t_id).value.length;
+}
+//-->
+</script>
+<style>
+.ta_nowrap {
+  word-wrap: no-wrap;
+}
+</style>
+</head>
+<body style="font-family: verdana; font-size: medium" onload="body_onload();">
+<textarea id=ex1.1_textarea style="display:none">
+abc,physics,53
+abc,chemistry,65
+xyz,physics,73
+xyz,chemistry,76
+</textarea>
+<input type=hidden id=ex1.1_xpath value="concat('Total of xyz:', sum(root/n1[@c1='xyz']/@c3))"/>
+<textarea id=ex1.2_textarea style="display:none">
+csv_ml,1.0,UTF-8,root,no_node_name,inline
+name,subject,marks
+abc,physics,53
+abc,chemistry,65
+xyz,physics,73
+xyz,chemistry,76
+</textarea>
+<input type=hidden id=ex1.2_xpath value="concat('Total of xyz:', sum(root/n1[@name='xyz']/@marks))"/>
+<textarea id=ex1.3_textarea style="display:none">
+csv_ml,1.0,UTF-8,root,with_node_name,inline
+student,name,subject,marks
+end_schema
+student,abc,physics,53
+student,abc,chemistry,65
+student,xyz,physics,73
+student,xyz,chemistry,76
+</textarea>
+<input type=hidden id=ex1.3_xpath value="concat('Total of xyz:', sum(root/student[@name='xyz']/@marks))"/>
+<textarea id=ex1.4_textarea style="display:none">
+csv_ml,1.0
+student,name,subject,marks
+1,abc,physics,53
+1,abc,chemistry,65
+1,xyz,physics,73
+1,xyz,chemistry,76
+</textarea>
+<input type=hidden id=ex1.4_xpath value="concat('Total of xyz:', sum(root/student[@name='xyz']/@marks))"/>
+<textarea id=ex1.5_textarea style="display:none">
+csv_ml,1.0
+student,name,subject,marks
+faculty,name,subject
+1,abc,physics,53
+1,abc,chemistry,65
+1,xyz,physics,73
+1,xyz,chemistry,76
+2,pqr,physics
+2,bcd,chemistry
+</textarea>
+<input type=hidden id=ex1.5_xpath value="concat('Total of xyz:', sum(root/student[@name='xyz']/@marks))"/>
+<textarea id=ex2.1_textarea style="display:none">
+csv_ml,1.0
+student,name,age
+ education,course_name,year_passed
+  subject,name,marks
+1,abc,24
+ 1,bs,2010
+  1,physics,53
+  1,chemistry,65
+ 1,ms,2012
+  1,physics,74
+  1,chemistry,75
+1,xyz,24
+ 1,bs,2010
+  1,physics,67
+  1,chemistry,85
+</textarea>
+<input type=hidden id=ex2.1_xpath value="/root/student[education/subject/@marks &gt; 80]"/>
+<textarea id=ex2.2_textarea style="display:none">
+csv_ml,1.0
+student,name,age
+ education,course_name,year_passed
+  subject,name,marks
+ references,name,company,designation
+1,abc,24
+ 1,bs,2010
+  1,physics,53
+  1,chemistry,65
+ 1,ms,2012
+  1,physics,74
+  1,chemistry,75
+ 2,pqr,bbb,executive
+ 2,mno,bbb,director
+1,xyz,24
+ 1,bs,2010
+  1,physics,67
+  1,chemistry,85
+</textarea>
+<input type=hidden id=ex2.2_xpath value="/root/student[education/subject/@marks &gt; 80]"/>
+<textarea id=ex3.1_textarea style="display:none">
+csv_ml,1.0
+student,name,age
+1,a
+1,b,23,His record is remarkable
+1,c,24,His record is remarkable,His performance is exemplary
+</textarea>
+<input type=hidden id=ex3.1_xpath value="/root/student[@name='c']"/>
+<textarea id=ex3.2_textarea style="display:none">
+csv_ml,1.0
+student
+ name
+ age
+1
+ 1,a
+ 2,23
+</textarea>
+<input type=hidden id=ex3.2_xpath value="/root/student/name/text()"/>
+<textarea id=ex3.3_textarea style="display:none">
+csv_ml,1.0
+sample,text
+1,No quote
+1, No quote with preceding space
+1,With quote (")
+1,"With quotes, and ""comma"""
+1, "With quotes, (space ignored)"
+1, """Enclosed, with double quote"""
+1, """Single, preceding double quote"
+1, "Double quote, suffix"""
+1, "Double quote, ("") in the middle"
+1, "More
+
+than
+
+one
+
+line"
+</textarea>
+<input type=hidden id=ex3.3_xpath value="/root/sample[3]/@text"/>
+<textarea id=ex3.4_textarea style="display:none">
+/* You can have comments anywhere,
+   even at the beginning
+*/
+csv_ml,1.0
+
+/* And empty lines like this */
+
+sample,text1,text2
+1,/* This is a comment */ "hello", "world" /* End of line comment */
+1,/* This is also a comment */, "/* But this isn't */"
+
+1,"third", "line" /* Multiline
+comment */
+/* Comment at beginning of line */1, "fourth" , "line"
+</textarea>
+<input type=hidden id=ex3.4_xpath value="/root/sample[2]/@text2"/>
+<textarea id=ex3.5.1_textarea style="display:none">
+csv_ml,1.0,UTF-8,data
+student,name,age
+1,a,24
+</textarea>
+<input type=hidden id=ex3.5.1_xpath value="/data/student/@name"/>
+<textarea id=ex3.5.2_textarea style="display:none">
+csv_ml,1.0,UTF-8,student
+student,name,age
+1,a,24
+</textarea>
+<input type=hidden id=ex3.5.2_xpath value="/student/@name"/>
+<textarea id=ex3.5.3_textarea style="display:none">
+csv_ml,1.0,UTF-8,student
+student,name,age
+1,a,24
+1,b,35
+</textarea>
+<input type=hidden id=ex3.5.3_xpath value="/root"/>
+<textarea id=ex3.5.4_textarea style="display:none">
+csv_ml,1.0,UTF-8,student
+student,name,age
+faculty,name,age
+1,a,24
+2,b,45
+</textarea>
+<input type=hidden id=ex3.5.4_xpath value="/root"/>
+<textarea id=ex3.6.1_textarea style="display:none">
+csv_ml,1.0
+our:student,his:name,age,xmlns:his,xmlns:our
+1,a,24,http://siara.cc/his,http://siara.cc/our
+1,b,26,http://siara.cc/his,http://siara.cc/our
+</textarea>
+<input type=hidden id=ex3.6.1_xpath value="/root/our:student[his:name='b']"/>
+<textarea id=ex3.6.2_textarea style="display:none">
+csv_ml,1.0,UTF-8,root/our='http://siara.cc/our' his='http://siara.cc/his'
+our:student,his:name,age
+1,a,24
+1,b,26
+</textarea>
+<input type=hidden id=ex3.6.2_xpath value="/root/our:student[his:name='b']"/>
+<textarea id=ex3.6.3_textarea style="display:none">
+csv_ml,1.0,UTF-8,xsl:stylesheet/xsl='http://www.w3.org/1999/XSL/Transform'
+xsl:stylesheet,version
+ xsl:template,match
+  xsl:value-of,select
+1,1.0
+ 1,//student
+  1,@name
+  1,@age
+</textarea>
+<input type=hidden id=ex3.6.3_xpath value="/xsl:stylesheet"/>
+<textarea id=ex3.7_textarea style="display:none">
+csv_ml,1.0,UTF-8,xsl:stylesheet/xsl='http://www.w3.org/1999/XSL/Transform'
+01,xsl:value-of,select
+02,xsl:for-each,select
+ 01
+xsl:stylesheet,version
+ xsl:template,match
+  01,02
+1,1.0
+ 1,//student
+  01,@name
+  01,@age
+  02,education
+   01,@course_name
+   01,@year_passed
+</textarea>
+<input type=hidden id=ex3.7_xpath value="/xsl:stylesheet"/>
+<textarea id=ex4.1_textarea style="display:none">
+csv_ml,1.0
+student,name(40)text,subject(30)text,marks(3)integer
+1,abc,physics,53
+1,xyz,physics,73
+</textarea>
+<input type=hidden id=ex4.1_xpath value=""/>
+<textarea id=ex4.2_textarea style="display:none">
+csv_ml,1.0
+student,name(40)text,subject(30)text=physics,marks(3)integer
+1,abc,maths,53
+1,xyz,chemistry,73
+</textarea>
+<input type=hidden id=ex4.2_xpath value=""/>
+<textarea id=ex4.3.1_textarea style="display:none">
+csv_ml,1.0
+student,name(40)text,nick(30)text=null,subject(30)text,marks(3)integer
+1,abc,pqr,physics,53
+1,xyz,,physics,73
+</textarea>
+<input type=hidden id=ex4.3.1_xpath value=""/>
+<textarea id=ex4.3.2_textarea style="display:none">
+csv_ml,1.0
+student,name(40)text,nick(30)text=,subject(30)text,marks(3)integer
+1,abc,pqr,physics,53
+1,xyz,,physics,73
+</textarea>
+<input type=hidden id=ex4.3.2_xpath value=""/>
+<textarea id=ex4.4_textarea style="display:none">
+csv_ml,1.0
+student,name(40)text,subject(30)text,"marks(6,2)numeric"
+1,abc,physics,53.34
+1,xyz,physics,73.5
+</textarea>
+<input type=hidden id=ex4.4_xpath value=""/>
+<textarea id=ex4.5_textarea style="display:none">
+csv_ml,1.0
+student,name,subject,marks,birth_date()date,join_date_time()datetime
+1,abc,physics,53.34,1982-01-23,2014-02-22 09:30:00
+1,xyz,physics,73.5,1985-11-12,2014-02-24 15:45:30
+</textarea>
+<input type=hidden id=ex4.5_xpath value=""/>
+<textarea id=ex4.6_textarea style="display:none">
+csv_ml,1.0
+student,id,name,subject,marks
+1,,abc,physics,53
+1,,abc,chemistry,54
+1,3,xyz,physics,73
+1,*4,xyz,physics,73
+</textarea>
+<input type=hidden id=ex4.6_xpath value=""/>
+<textarea id=ex4.7_textarea style="display:none">
+csv_ml,1.0
+student,name,age
+ education,course_name,year_passed
+ references,name,company,designation
+1,abc,24
+ 1,bs,2010
+ 1,ms,2012
+ 2,pqr,bbb,executive
+ 2,mno,bbb,director's secretary
+</textarea>
+<input type=hidden id=ex4.7_xpath value=""/>
+
+<textarea id=ex101_textarea style="display:none">
+/* This is an example of how comments can be used inside csv*/ csv_ml,1.0
+
+employee,name,date_of_joining,date_of_birth,cost
+ education,name_of_institution,name_of_course,year_passed,grade
+  subject,name,marks
+ dependent,name,relation,date_of_birth
+end_schema
+         			
+em/*hello*/ployee,siara,21-sep-2014,2-jun-1982,    "34,234"  
+ educ/*multi
+        line
+   comment*/ation,   "xyz",B.S,1997,/* unclosed quote test */"A""
+  subject/*,*/,"mathematics"  ,94
+  subject,"ph/* comment not recognized inside quote*/ysi""""cs",89
+ education,"p"q""r","M.S
+Multiline",1999,B
+  subject,"mathematics""",76
+  subject,"""physics",78
+ dependent,b,wife,"21-oct-1983"                    /* EOL comment */
+ dependent,c,daughter's husband,20-jun-2006
+</textarea>
+<input type=hidden id=ex101_xpath value="/root/employee/dependent[@relation='wife']"/>
+
+<span>Input (csv_ml):</span>
+<span>
+  <select rows=1 cols=60 align=right onchange="ex_change(this.value);">
+    <option value="1.1">Example 1.1: Conventional CSV</option>
+    <option value="1.2">Example 1.2: Conventional CSV with Header</option>
+    <option value="1.3">Example 1.3: Conventional CSV with Header and Node name</option>
+    <option value="1.4">Example 1.4: Conventional CSV with Header and Node index</option>
+    <option value="1.5">Example 1.5: Multiple nodes under root</option>
+    <option value="2.1">Example 2.1: Multiple level CSV data</option>
+    <option value="2.2">Example 2.2: Multiple level CSV data with siblings</option>
+    <option value="3.1">Example 3.1: Node attributes</option>
+    <option value="3.2">Example 3.2: Node content</option>
+    <option value="3.3">Example 3.3: Quote handling</option>
+    <option value="3.4">Example 3.4: Inline comments and empty lines</option>
+    <option value="3.5.1">Example 3.5.1: Changing root node</option>
+    <option value="3.5.2">Example 3.5.2: Changing root node - data node as root</option>
+    <option value="3.5.3">Example 3.5.3: Changing root node - error case 1</option>
+    <option value="3.5.4">Example 3.5.4: Changing root node - error case 2</option>
+    <option value="3.6.1">Example 3.6.1: Namespaces (1)</option>
+    <option value="3.6.2">Example 3.6.2: Namespaces (2)</option>
+    <option value="3.6.3">Example 3.6.3: Namespaces (3)</option>
+    <option value="3.7">Example 3.7: Re-using node definitions</option>
+    <option value="4.1">Example 4.1: Schema - Specifying type and length</option>
+    <option value="4.2">Example 4.2: Schema - Default value</option>
+    <option value="4.3.1">Example 4.3.1: Schema - Null values (1)</option>
+    <option value="4.3.2">Example 4.3.2: Schema - Null values (2)</option>
+    <option value="4.4">Example 4.4: Schema - Precision and Scale</option>
+    <option value="4.5">Example 4.5: Schema - Date and Time</option>
+    <option value="4.6">Example 4.6: Schema - Special column 'id'</option>
+    <option value="4.7">Example 4.7: Schema - Special column 'parent_id'</option>
+    <option value="101">Test Case: Quotes, Comments and Empty lines</option>
+  </select>
+</span>
+Input Size: <span id=in_size></span> characters
+<br/>
+<textarea id="csv_ml_src" rows="17" cols="100" class="ta_nowrap" 
+    onkeyup="javascript:document.getElementById('in_size').innerHTML=this.value.length">
+</textarea>
+<br/>
+Output:
+<input type="button" id=ddldml value="DDL/DML" onclick="generateDDLDML();"/>
+<input type="button" value="JSON" onclick="convertToJSO();"/>
+<input type="button" value="XML" onclick="convertToXML();"/>
+<input type="button" value="Apply XPath:" onclick="evalXPath();"/>
+<input type="text" id="xpath" value="" size="50"/><br/>
+<textarea id="out" rows="12" cols="100"
+    onkeyup="javascript:document.getElementById('out_size').innerHTML=this.value.length"></textarea>
+<br/>
+<input type="button" value="XML to CSV" onclick="backToCSV();"/>
+Output Size: <span id=out_size></span> characters
+</body>
+</html>
+<!--
+TOFIX: Handle data types *
+TOFIX: Prepare document and add examples *
+TOFIX: Unicode directive and parsing *
+TOFIX: Retrieve from SQLite / MySQL *
+TOFIX: Document Code *
+TOFIX: License *
+TOFIX: Stricter parsing
+TOFIX: Reusable nodes?
+TOFIX: textContent (content of all nodes?)
+TOFIX: Validation *
+//-->

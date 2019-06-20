@@ -1,0 +1,27 @@
+{
+  "name": "csv_ml_parser.siara.cc",
+  "version": "1.0.0",
+  "description": "CSV parser RFC4180 compliant, allows comments and empty lines, pull parsing",
+  "main": "csv_parser.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/siara-cc/csv_parser_npmjs.git"
+  },
+  "keywords": [
+    "csv",
+    "parser",
+    "rfc4180",
+    "token",
+    "tsv",
+    "tdv"
+  ],
+  "author": "Arundale Ramanathan <arun@siara.cc>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/siara-cc/csv_parser_npmjs/issues"
+  },
+  "homepage": "https://github.com/siara-cc/csv_parser_npmjs#readme"
+}
