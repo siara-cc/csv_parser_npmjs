@@ -4,34 +4,77 @@ This is an Advanced Parser for CSV (Comma-separated-value), TSV (Tab-separated-v
 
 In addition to parsing regular tabular formats with or without header, it can also parse structured delimited files and convert them to XML DOM or JSON objects.
 
+![Promo picture](csv_ml_promo.png?raw=true)
+
 This project proposes the idea of using CSV format for defining structured relational data in additional to tabular data. The idea is nick named CSV_ML (Multi-level CSV). CSV_ML attempts to provide a simple unambiguous format for representing structured data that includes schema definition.
 
-# Applications
+# Installation
 
-- Enterprise Application Integration (EAI)
-- Lightweight alternative to JSON or XML in Three-tier architecture
-- Alternative to XML in transfer of data using AJAX
-- Data storage and transfer format for embedded platforms such as Arduino and Raspberry PI.
-- Data storage and transfer format for mobile/tablet devices based on Android, Windows or iOS.
-- Data transfer format for spreadsheets as Tab delimited values through clipboard or otherwise.
-    
-For complete documentation and examples, download [Multi-level nested CSV.pdf](http://siara.cc/csv_ml/Multi-level%20nested%20CSV%20TDV.pdf)
+For using with Node.js, install using `npm install csv_ml_parser.siara.cc`.  For using it on a browser, include `csv_parser.js` provided in this repository.
 
 # Usage
 
 ## Basic usage
 
-Instantiate `CSV_ML_Parser` class, and parse any CSV or Multi-Level CSV into JSON or XML object:
+Instantiate `CSV_ML_Parser` class, and parse any CSV or Multi-Level CSV into Javascript object:
 
 ```js
 var csv_ml = require('csv_ml_parser.siara.cc');
-var csv_ml_parser = new csv_ml.CSV_ML_Parser("Hello,World");
+var csv_ml_parser = new csv_ml.CSV_ML_Parser("csv_ml,1.0\n" +
+                        "Contact,name,occupation,company\n" +
+                        " Telephone,type,number\n" +
+                        "end_schema\n" +
+                        "Contact,Jason Blum,Founder/CEO,Blumhouse Productions\n" +
+                        " Telephone,mobile,202-555-0168\n" +
+                        " Telephone,office,202-555-0185\n" +
+                        "Contact,Kevin Beggs,Chairman,Lionsgate TV Group\n" +
+                        " Telephone,mobile,617-555-0148\n" +
+                        " Telephone,office,617-555-0162");
 var ret = csv_ml_parser.parse("jso", false);
 if (csv_ml_parser.ex.display_exceptions()) { /* Handle error */ return };
 console.log(JSON.stringify(ret, null, ' '));
 ```
 
 Try out different pre-defined examples online at http://siara.cc/csv_ml/csv_ml_js.html
+
+### Output
+
+```json
+{
+ "Contact": [
+  {
+   "name": "Jason Blum",
+   "occupation": "Founder/CEO",
+   "company": "Blumhouse Productions",
+   "Telephone": [
+    {
+     "type": "mobile",
+     "number": "202-555-0168"
+    },
+    {
+     "type": "office",
+     "number": "202-555-0185"
+    }
+   ]
+  },
+  {
+   "name": "Kevin Beggs",
+   "occupation": "Chairman",
+   "company": "Lionsgate TV Group",
+   "Telephone": [
+    {
+     "type": "mobile",
+     "number": "617-555-0148"
+    },
+    {
+     "type": "office",
+     "number": "617-555-0162"
+    }
+   ]
+  }
+ ]
+}
+```
 
 # Advantages over XML and JSON
 
@@ -45,6 +88,17 @@ CSV_ML
 - allows database binding
 - can be used in EAI (Application Integration) for import and export of data
 - is simpler to parse, allowing data to be available even in low memory devices
+
+# Applications
+
+- Enterprise Application Integration (EAI)
+- Lightweight alternative to JSON or XML in Three-tier architecture
+- Alternative to XML in transfer of data using AJAX
+- Data storage and transfer format for embedded platforms such as Arduino and Raspberry PI.
+- Data storage and transfer format for mobile/tablet devices based on Android, Windows or iOS.
+- Data transfer format for spreadsheets as Tab delimited values through clipboard or otherwise.
+    
+For complete documentation and examples, download [Multi-level nested CSV.pdf](http://siara.cc/csv_ml/Multi-level%20nested%20CSV%20TDV.pdf)
 
 # Examples
 
